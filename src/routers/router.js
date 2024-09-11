@@ -1,9 +1,10 @@
-const express = require('express')
- const router = express.Router();
+const { Router } = require("express");
+const UsuarioController = require("../controllers/UsuarioController");
+const usuarioController = new UsuarioController();
 
+const router = Router();
+router.get("/usuarios", (req, res) => {
+  usuarioController.getTodos(req, res);
+});
 
- router.get('/', (req,res) =>{
-    res.send('deu bom');
-})
-
-module.exports = router
+module.exports = router;
