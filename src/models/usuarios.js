@@ -8,12 +8,15 @@ module.exports = (sequelize, DataTypes) => {
       });
       Usuario.belongsTo(models.Telefone, {
         foreignKey: "id_telefone",
+        as: 'telefone'
       });
       Usuario.belongsTo(models.Pessoas, {
         foreignKey: "id_pessoas",
-      });
+        as: 'pessoa'
+      }); 
       Usuario.belongsTo(models.Enderecos, {
         foreignKey: "id_endereco",
+        as: 'endereco'
       });
     }
   }

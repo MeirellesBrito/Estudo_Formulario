@@ -4,7 +4,8 @@ module.exports = (sequelize, DataTypes) => {
   class Enderecos extends Model {
     static associate(models) {
       Enderecos.hasOne(models.Usuario, {
-        foreignKey: "id_endereco"
+        foreignKey: "id_endereco",
+         as: 'usuario'
       });
     }
   }

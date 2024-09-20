@@ -4,7 +4,8 @@ module.exports = (sequelize, DataTypes) => {
   class Pessoas extends Model {
     static associate(models) {
       Pessoas.hasOne(models.Usuario, {
-        foreignKey: "id_pessoas"
+        foreignKey: "id_pessoas",
+        as: "usuario"
       });
     }
   }
